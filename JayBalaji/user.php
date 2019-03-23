@@ -41,7 +41,7 @@ include('header.php');
                    			<table  id="user_data" class="table table-bordered table-striped display nowrap data" >
                    				<thead>
 									<tr>
-										<th scope="col" data-orderable="false">ID</th>
+										<th scope="col" data-orderable="false" >ID</th>
 										<th scope="col">Email</th>
 										<th scope="col">Name</th>
 										<th scope="col" data-orderable="false">Edit</th>

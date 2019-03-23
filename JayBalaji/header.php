@@ -13,9 +13,9 @@
 		<script src="js/bootstrap.min.js"></script>
         
 	</head>
-	<body>
+	<body style="background-color: #CFE2F0">
 		<div class="container">
-			<h2 align="center" style="color: #004d99">Jay Balaji</h2><br/>
+			<h1 align="center" style="color: #004d99">Jay Balaji</h1><br/>
 
 			<nav class="navbar navbar-inverse">
 				<div class="container-fluid">
@@ -30,12 +30,12 @@
 						<li><a href="user.php">User</a></li>
 						<li><a href="category.php">Category</a></li>
 						<li><a href="brand.php">Brand</a></li>
-                        <li><a href="attendence/index.php">Attendance</a></li>
-                        <li><a href="attendence/admin/record.php">View Attendance</a></li>
                         <li><a href="product.php">Product</a></li>
 						<li><a href="order.php">Order</a></li>
                         <li><a href="Send_Text.php">Send-Text</a></li>
                         <li><a href="track_courier.php">Track-Order</a></li>
+                        <li><a href="attendence/index.php">Attendance</a></li>
+                        <li><a href="attendence/admin/record.php">View Attendance</a></li>
                         
 					<?php
 					}

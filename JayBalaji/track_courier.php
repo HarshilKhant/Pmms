@@ -26,8 +26,8 @@ include('header.php');
 		<div>
             <br />
 			<br />
-			<div class = "col-lg-3"></div>
-			<div class = "col-lg-6 well">
+			<div class = "col-lg-4"></div>
+			<div class = "col-lg-4 well">
 				<h2 align="center">Track Order</h2>
 				<br />
 				<div id = "result"></div>

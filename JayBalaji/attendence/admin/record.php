@@ -10,7 +10,7 @@
 		<link rel = "stylesheet" href = "../css/bootstrap.css" />
 		<link rel = "stylesheet" href = "css/jquery.dataTables.css" />
 	</head>
-	<body>
+	<body style="background-color: #CFE2F0">
         <h2 align="center" style="color: #004d99">Employee Record</h2>
 		<div class = "container-fluid">
 			

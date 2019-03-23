@@ -27,9 +27,10 @@ foreach($result as $row)
 include('header.php');
 
 ?>
-		<div class="panel panel-default">
-			<div class="panel-heading">Edit Profile</div>
-			<div class="panel-body">
+    <div class = "col-lg-4"></div>
+    <div class = "col-lg-4 well">
+			<h2 align="center">Edit Profile</h2>
+			<div>
 				<form method="post" id="edit_profile_form">
 					<span id="message"></span>
 					<div class="form-group">
@@ -57,7 +58,6 @@ include('header.php');
 				</form>
 			</div>
 		</div>
-
 <script>
 $(document).ready(function(){
 	$('#edit_profile_form').on('submit', function(event){
