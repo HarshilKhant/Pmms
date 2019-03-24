@@ -246,9 +246,9 @@ function get_user_wise_total_order($connect)
 		$output .= '
 		<tr>
 			<td>'.$row['user_name'].'</td>
-			<td align="right">$ '.$row["order_total"].'</td>
-			<td align="right">$ '.$row["cash_order_total"].'</td>
-			<td align="right">$ '.$row["credit_order_total"].'</td>
+			<td align="right">₹ '.$row["order_total"].'</td>
+			<td align="right">₹ '.$row["cash_order_total"].'</td>
+			<td align="right">₹ '.$row["credit_order_total"].'</td>
 		</tr>
 		';
 
@@ -259,9 +259,9 @@ function get_user_wise_total_order($connect)
 	$output .= '
 	<tr>
 		<td align="right"><b>Total</b></td>
-		<td align="right"><b>$ '.$total_order.'</b></td>
-		<td align="right"><b>$ '.$total_cash_order.'</b></td>
-		<td align="right"><b>$ '.$total_credit_order.'</b></td>
+		<td align="right"><b>₹ '.$total_order.'</b></td>
+		<td align="right"><b>₹ '.$total_cash_order.'</b></td>
+		<td align="right"><b>₹ '.$total_credit_order.'</b></td>
 	</tr></table></div>
 	';
 	return $output;

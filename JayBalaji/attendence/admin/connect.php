@@ -1,2 +1,2 @@
 <?php
-	$conn = new mysqli('localhost', 'root', '', 'testing2') or die(mysqli_error());
+	$conn = new mysqli('localhost', 'root', '', 'Jay_Balaji') or die(mysqli_error());

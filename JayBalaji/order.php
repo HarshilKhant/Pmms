@@ -21,7 +21,7 @@ include('header.php');
 	<script>
 	$(document).ready(function(){
 		$('#inventory_order_date').datepicker({
-			dateformat: "yyyy-mm-dd",
+			format: "yyyy-mm-dd",
 			autoclose: true
             
 		});
@@ -52,6 +52,7 @@ include('header.php');
 								<th>Total Amount</th>
 								<th>Payment Status</th>
 								<th>Order Date</th>
+                                <th>Contact</th>
 								<?php
 								if($_SESSION['type'] == 'master')
 								{
@@ -72,7 +73,7 @@ include('header.php');
     <div id="orderModal" class="modal fade">
 
     	<div class="modal-dialog">
-    		<form method="post" id="order_form">
+    		<form method="post" id="order_form" autocomplete="off">
     			<div class="modal-content">
     				<div class="modal-header">
     					<button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -104,13 +105,24 @@ include('header.php');
 							<span id="span_product_details"></span>
 							<hr />
 						</div>
+                        <div class="row">
+                        <div class="col-md-6">
 						<div class="form-group">
 							<label>Select Payment Status</label>
 							<select name="payment_status" id="payment_status" class="form-control">
 								<option value="cash">Cash</option>
 								<option value="credit">Credit</option>
 							</select>
+                            </div>
 						</div>
+                        <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Enter Contact Details</label>
+                            <input type="text" name="contact" id="contact" class="form-control" required = "required" 
+                                   required pattern="[0-9]{10}" title="contact number must be numeric and contain atleast 10 digits" />
+                        </div>
+				        </div>
+                        </div>
     				</div>
     				<div class="modal-footer">
     					<input type="hidden" name="inventory_order_id" id="inventory_order_id" />
@@ -244,6 +256,7 @@ include('header.php');
 					$('#inventory_order_address').val(data.inventory_order_address);
 					$('#span_product_details').html(data.product_details);
 					$('#payment_status').val(data.payment_status);
+                    $('#contact').val(data.contact);
 					$('.modal-title').html("<i class='fa fa-pencil-square-o'></i> Edit Order");
 					$('#inventory_order_id').val(inventory_order_id);
 					$('#action').val('Edit');

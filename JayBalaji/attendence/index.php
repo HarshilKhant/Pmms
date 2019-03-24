@@ -7,7 +7,7 @@
 		<meta name = "viewport" content = "width=device-width, initial-scale=1" />
 		<link rel = "stylesheet" type = "text/css" href = "../css/bootstrap.min.css"/>
 	</head>
-	<body style="background-color: #CFE2F0">
+	<body style="background-image: url('../css/1.png')">
 		<div>
 			<br />
 			<br />

@@ -13,7 +13,7 @@
 		<script src="js/bootstrap.min.js"></script>
         
 	</head>
-	<body style="background-color: #CFE2F0">
+	<body style="background-image: url('css/1.png')">
 		<div class="container">
 			<h1 align="center" style="color: #004d99">Jay Balaji</h1><br/>
 
@@ -32,7 +32,7 @@
 						<li><a href="brand.php">Brand</a></li>
                         <li><a href="product.php">Product</a></li>
 						<li><a href="order.php">Order</a></li>
-                        <li><a href="Send_Text.php">Send-Text</a></li>
+                        <li><a href="Send_Text.php">Send notification</a></li>
                         <li><a href="track_courier.php">Track-Order</a></li>
                         <li><a href="attendence/index.php">Attendance</a></li>
                         <li><a href="attendence/admin/record.php">View Attendance</a></li>

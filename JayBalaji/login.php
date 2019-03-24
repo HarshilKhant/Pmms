@@ -65,7 +65,7 @@ if(isset($_POST["login"]))
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<script src="js/bootstrap.min.js"></script>
 	</head>
-	<body style="background-color: #CFE2F0">
+	<body style="background-image: url('css/1.png')">
 		<br />
 		<div class="container">
 			<h2 align="center">Jay Balaji Mobile Accessories</h2>

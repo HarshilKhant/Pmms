@@ -76,6 +76,7 @@ foreach($result as $row)
 	$sub_array[] = $payment_status;
 	//$sub_array[] = $status;
 	$sub_array[] = $row['inventory_order_date'];
+    $sub_array[] = $row['contact'];
 	if($_SESSION['type'] == 'master')
 	{
 		$sub_array[] = get_user_name($connect, $row['user_id']);

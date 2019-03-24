@@ -28,22 +28,23 @@ if(isset($_GET["pdf"]) && isset($_GET['order_id']))
 		$output .= '
 		<table width="100%" border="1" cellpadding="5" cellspacing="0">
 			<tr>
-				<td colspan="2" align="center" style="font-size:18px"><b>Invoice</b></td>
+				<td colspan="2" align="center" style="font-size:18px"><b>Jay Balaji Invoice</b></td>
 			</tr>
 			<tr>
 				<td colspan="2">
 				<table width="100%" cellpadding="5">
 					<tr>
 						<td width="65%">
-							To,<br />
-							<b>RECEIVER (BILL TO)</b><br />
-							Name : '.$row["inventory_order_name"].'<br />	
-							Billing Address : '.$row["inventory_order_address"].'<br />
+							To,<br /><br />	
+							<b>RECEIVER (BILL TO)</b><br /><br />	
+							Name : '.$row["inventory_order_name"].'<br /><br />		
+							Billing Address : '.$row["inventory_order_address"].'<br /><br />	
+                            Contact Detail : '.$row["contact"].'<br /><br />	
 						</td>
 						<td width="35%">
-							Reverse Charge<br />
-							Invoice No. : '.$row["inventory_order_id"].'<br />
-							Invoice Date : '.$row["inventory_order_date"].'<br />
+							Reverse Charge<br /><br />	
+							Invoice No. : '.$row["inventory_order_id"].'<br /><br />	
+							Invoice Date : '.$row["inventory_order_date"].'<br /><br />	
 						</td>
 					</tr>
 				</table>

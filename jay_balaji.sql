@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 23, 2019 at 06:03 PM
+-- Generation Time: Mar 24, 2019 at 07:53 PM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -59,7 +59,14 @@ CREATE TABLE IF NOT EXISTS `brand` (
   `brand_name` varchar(250) NOT NULL,
   `brand_status` enum('active','inactive') NOT NULL,
   PRIMARY KEY (`brand_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `brand`
+--
+
+INSERT INTO `brand` (`brand_id`, `category_id`, `brand_name`, `brand_status`) VALUES
+(27, 5, 'sony', 'active');
 
 -- --------------------------------------------------------
 
@@ -105,13 +112,6 @@ CREATE TABLE IF NOT EXISTS `inventory_order` (
   PRIMARY KEY (`inventory_order_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `inventory_order`
---
-
-INSERT INTO `inventory_order` (`inventory_order_id`, `user_id`, `inventory_order_total`, `inventory_order_date`, `inventory_order_name`, `inventory_order_address`, `payment_status`, `inventory_order_status`, `inventory_order_created_date`) VALUES
-(7, 11, 1320.00, '2003-03-19', 'Harshil', 'E-202, mahalaxmi chs, gopal nagar, pandurang budhkar marg, worli', 'cash', 'active', '2019-03-23');
-
 -- --------------------------------------------------------
 
 --
@@ -127,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `inventory_order_product` (
   `price` double(10,2) NOT NULL,
   `tax` double(10,2) NOT NULL,
   PRIMARY KEY (`inventory_order_product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `inventory_order_product`
@@ -148,10 +148,13 @@ INSERT INTO `inventory_order_product` (`inventory_order_product_id`, `inventory_
 (14, 0, 4, 2, 500.00, 1.00),
 (15, 0, 4, 2, 500.00, 1.00),
 (16, 6, 4, 12, 500.00, 1.00),
-(17, 7, 5, 12, 100.00, 10.00),
 (18, 0, 4, 12, 500.00, 1.00),
 (19, 0, 4, 2, 500.00, 1.00),
-(20, 8, 4, 2, 500.00, 1.00);
+(20, 8, 4, 2, 500.00, 1.00),
+(21, 7, 4, 12, 500.00, 1.00),
+(22, 0, 4, 1, 500.00, 1.00),
+(23, 0, 7, 2, 100.00, 0.00),
+(24, 0, 7, 1, 100.00, 0.00);
 
 -- --------------------------------------------------------
 
@@ -174,14 +177,14 @@ CREATE TABLE IF NOT EXISTS `product` (
   `product_status` enum('active','inactive') NOT NULL,
   `product_date` date NOT NULL,
   PRIMARY KEY (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`product_id`, `category_id`, `brand_id`, `product_name`, `product_description`, `product_quantity`, `product_unit`, `product_base_price`, `product_tax`, `product_enter_by`, `product_status`, `product_date`) VALUES
-(4, 5, 17, 'Earphone_Skullcandy', 'Earphones', 10, 'Nos', 500.00, '1.00', 11, 'active', '2019-03-23');
+(7, 5, 27, 'XYZ', 'abc', 10, 'Nos', 100.00, '0.00', 11, 'active', '2019-03-24');
 
 -- --------------------------------------------------------
 
