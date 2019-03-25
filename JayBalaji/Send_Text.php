@@ -33,7 +33,7 @@ include('header.php');
     <br />
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 <div class = "form-group">
-<label>Enter Contact:</label> <input type="text" name="contact" class = "form-control" required = "required" required pattern="[0-9]{10}" title="Name must be alphabetic and contain atleast 3 characters"><br>
+<label>Enter Contact:</label> <input type="text" name="contact" class = "form-control" required = "required" title="Name must be alphabetic and contain atleast 3 characters"><br>
 <label>Enter Message: </label>
     <textarea name="msg" class="form-control" required = "required"></textarea><br>
  <!--   <input type="text" name="msg" class = "form-control" required = "required"><br>-->
@@ -71,7 +71,7 @@ include('header.php');
      //   echo $_POST['contact'];
             
  
-	$Textlocal = new Textlocal(false, false, 'f11WyhV+2h4-OMzq86lUYsdegO3P4BY0qts6hI8ui8');
+	$Textlocal = new Textlocal(false, false, 'XZjcA+RS2vA-1FWQUGRCnL3ZuUtd6FQNHfIam1DXKG');
  
 	$numbers = array(htmlentities($_POST["contact"]));
 	$sender = 'TXTLCL';

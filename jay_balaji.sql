@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 24, 2019 at 07:53 PM
+-- Generation Time: Mar 25, 2019 at 12:13 PM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -59,14 +59,14 @@ CREATE TABLE IF NOT EXISTS `brand` (
   `brand_name` varchar(250) NOT NULL,
   `brand_status` enum('active','inactive') NOT NULL,
   PRIMARY KEY (`brand_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `brand`
 --
 
 INSERT INTO `brand` (`brand_id`, `category_id`, `brand_name`, `brand_status`) VALUES
-(27, 5, 'sony', 'active');
+(28, 5, 'JBL', 'active');
 
 -- --------------------------------------------------------
 
@@ -109,8 +109,19 @@ CREATE TABLE IF NOT EXISTS `inventory_order` (
   `payment_status` enum('cash','credit') NOT NULL,
   `inventory_order_status` varchar(100) NOT NULL,
   `inventory_order_created_date` date NOT NULL,
+  `contact` varchar(15) NOT NULL,
+  `transaction_id` varchar(50) NOT NULL,
   PRIMARY KEY (`inventory_order_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `inventory_order`
+--
+
+INSERT INTO `inventory_order` (`inventory_order_id`, `user_id`, `inventory_order_total`, `inventory_order_date`, `inventory_order_name`, `inventory_order_address`, `payment_status`, `inventory_order_status`, `inventory_order_created_date`, `contact`, `transaction_id`) VALUES
+(9, 11, 515.00, '2019-03-25', 'Abhi Kansagra', 'Rajkot', 'cash', 'active', '2019-03-25', '7777996559', ''),
+(10, 11, 1030.00, '2019-03-25', 'HarshilKhant', 'Prashil - 61 , near Neel\r\nSaurashtra University gat', 'credit', 'active', '2019-03-25', '7777996889', 'T23543213'),
+(11, 20, 1030.00, '2019-03-25', 'Harry Makadia', 'Rajkot', 'credit', 'active', '2019-03-25', '9898898953', 'RRCA321');
 
 -- --------------------------------------------------------
 
@@ -127,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `inventory_order_product` (
   `price` double(10,2) NOT NULL,
   `tax` double(10,2) NOT NULL,
   PRIMARY KEY (`inventory_order_product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `inventory_order_product`
@@ -154,7 +165,11 @@ INSERT INTO `inventory_order_product` (`inventory_order_product_id`, `inventory_
 (21, 7, 4, 12, 500.00, 1.00),
 (22, 0, 4, 1, 500.00, 1.00),
 (23, 0, 7, 2, 100.00, 0.00),
-(24, 0, 7, 1, 100.00, 0.00);
+(24, 0, 7, 1, 100.00, 0.00),
+(25, 0, 8, 1, 500.00, 3.00),
+(26, 9, 8, 1, 500.00, 3.00),
+(27, 10, 8, 2, 500.00, 3.00),
+(28, 11, 8, 2, 500.00, 3.00);
 
 -- --------------------------------------------------------
 
@@ -177,14 +192,14 @@ CREATE TABLE IF NOT EXISTS `product` (
   `product_status` enum('active','inactive') NOT NULL,
   `product_date` date NOT NULL,
   PRIMARY KEY (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`product_id`, `category_id`, `brand_id`, `product_name`, `product_description`, `product_quantity`, `product_unit`, `product_base_price`, `product_tax`, `product_enter_by`, `product_status`, `product_date`) VALUES
-(7, 5, 27, 'XYZ', 'abc', 10, 'Nos', 100.00, '0.00', 11, 'active', '2019-03-24');
+(8, 5, 28, 'JBL spark', 'Earphone with high bass', 20, 'Nos', 500.00, '3.00', 11, 'active', '2019-03-25');
 
 -- --------------------------------------------------------
 
@@ -257,7 +272,7 @@ CREATE TABLE IF NOT EXISTS `user_details` (
   `user_type` enum('master','user') NOT NULL,
   `user_status` enum('Active','Inactive') NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user_details`
@@ -271,7 +286,7 @@ INSERT INTO `user_details` (`user_id`, `user_email`, `user_password`, `user_name
 (6, 'edna_william@gmail.com', '$2y$10$mfMXnH.TCmg5tlYRhqjxu.ILly8s9.qsLKOpyxgUl6h1fZt6x/B5C', 'Edna William', 'user', 'Active'),
 (8, 'john_parks@gmail.com', '$2y$10$WtsZUxIIz/N4NoIW0Db.pu0VfLWcPs6TyQ8SkpVHLDLGhdNOfALC.', 'John Park', 'user', 'Active'),
 (11, 'khantharshil123@gmail.com', '$2y$10$OgReCGtUkhQhJYwdEOnrbemZSwCHvaJ8a.HQwV/cN/.5TX/gy5eiy', 'harshil', 'master', 'Active'),
-(18, 'check@gmail.com', '$2y$10$V0jHq5QZ3YqXvZMmaOnaCuvFP.L9179UVYkYgZMoPoRkJsLsJUAGe', '123', 'user', 'Active');
+(20, 'p@gmail.com', '$2y$10$o/Ofi6kowXMamMDeOsHE1uU6qjs.emL6qtWGuLPJOEdOuLwLF2GwO', 'purvaraj', 'user', 'Active');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

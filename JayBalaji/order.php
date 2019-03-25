@@ -50,9 +50,10 @@ include('header.php');
 								<th data-orderable="false">Order ID</th>
 								<th>Customer Name</th>
 								<th>Total Amount</th>
-								<th>Payment Status</th>
+								<th>Payment</th>
 								<th>Order Date</th>
-                                <th>Contact</th>
+                                <th data-orderable="false">Contact</th>
+                                <th data-orderable="false">Transaction ID</th>
 								<?php
 								if($_SESSION['type'] == 'master')
 								{
@@ -85,7 +86,7 @@ include('header.php');
 								<div class="form-group">
 									<label>Enter Receiver Name</label>
 									<input type="text" name="inventory_order_name" id="inventory_order_name" class="form-control" required = "required" 
-                                   required pattern="[a-zA-Z]{3,}" title="Name must be alphabetic and contain atleast 3 characters" />
+                                   required pattern="[a-zA-Z ]{3,}" title="Name must be alphabetic and contain atleast 3 characters" />
 								</div>
 							</div>
 							<div class="col-md-6">
@@ -122,6 +123,10 @@ include('header.php');
                                    required pattern="[0-9]{10}" title="contact number must be numeric and contain atleast 10 digits" />
                         </div>
 				        </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Enter Transaction id</label>
+                            <input type="text" name="transaction_id" id="transaction_id" class="form-control" required = "required"  />
                         </div>
     				</div>
     				<div class="modal-footer">
@@ -257,6 +262,7 @@ include('header.php');
 					$('#span_product_details').html(data.product_details);
 					$('#payment_status').val(data.payment_status);
                     $('#contact').val(data.contact);
+                    $('#transaction_id').val(data.transaction_id);
 					$('.modal-title').html("<i class='fa fa-pencil-square-o'></i> Edit Order");
 					$('#inventory_order_id').val(inventory_order_id);
 					$('#action').val('Edit');

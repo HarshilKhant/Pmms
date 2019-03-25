@@ -42,9 +42,11 @@ if(isset($_GET["pdf"]) && isset($_GET['order_id']))
                             Contact Detail : '.$row["contact"].'<br /><br />	
 						</td>
 						<td width="35%">
+                            <br /><br />	
 							Reverse Charge<br /><br />	
 							Invoice No. : '.$row["inventory_order_id"].'<br /><br />	
-							Invoice Date : '.$row["inventory_order_date"].'<br /><br />	
+							Invoice Date : '.$row["inventory_order_date"].'<br /><br />
+                            Transaction ID: '.$row["transaction_id"].'<br /><br />
 						</td>
 					</tr>
 				</table>

@@ -11,8 +11,8 @@ if(isset($_POST['btn_action']))
 	if($_POST['btn_action'] == 'Add')
 	{
 		$query = "
-		INSERT INTO inventory_order (user_id, inventory_order_total, inventory_order_date, inventory_order_name, inventory_order_address, payment_status, inventory_order_status, inventory_order_created_date, contact) 
-		VALUES (:user_id, :inventory_order_total, :inventory_order_date, :inventory_order_name, :inventory_order_address, :payment_status, :inventory_order_status, :inventory_order_created_date, :contact)
+		INSERT INTO inventory_order (user_id, inventory_order_total, inventory_order_date, inventory_order_name, inventory_order_address, payment_status, inventory_order_status, inventory_order_created_date, contact, transaction_id) 
+		VALUES (:user_id, :inventory_order_total, :inventory_order_date, :inventory_order_name, :inventory_order_address, :payment_status, :inventory_order_status, :inventory_order_created_date, :contact, :transaction_id)
 		";
 		$statement = $connect->prepare($query);
 		$statement->execute(
@@ -25,7 +25,8 @@ if(isset($_POST['btn_action']))
 				':payment_status'				=>	$_POST['payment_status'],
 				':inventory_order_status'		=>	'active',
 				':inventory_order_created_date'	=>	date("Y-m-d"),
-                ':contact'                      =>  $_POST['contact']
+                ':contact'                      =>  $_POST['contact'],
+                ':transaction_id'               =>  $_POST['transaction_id']
 			)
 		);
 		$result = $statement->fetchAll();
@@ -90,6 +91,7 @@ if(isset($_POST['btn_action']))
 			$output['inventory_order_address'] = $row['inventory_order_address'];
 			$output['payment_status'] = $row['payment_status'];
             $output['contact'] = $row['contact'];
+            $output['transaction_id'] = $row['transaction_id'];
 		}
 		$sub_query = "
 		SELECT * FROM inventory_order_product 
@@ -182,7 +184,8 @@ if(isset($_POST['btn_action']))
 			inventory_order_address = :inventory_order_address, 
 			inventory_order_total = :inventory_order_total, 
 			payment_status = :payment_status,
-            contact = :contact
+            contact = :contact,
+            transaction_id = :transaction_id
 			WHERE inventory_order_id = :inventory_order_id
 			";
 			$statement = $connect->prepare($update_query);
@@ -194,7 +197,8 @@ if(isset($_POST['btn_action']))
 					':inventory_order_total'		=>	$total_amount,
 					':payment_status'				=>	$_POST["payment_status"],
 					':inventory_order_id'			=>	$_POST["inventory_order_id"],
-                    ':contact'                      =>  $_POST["contact"]
+                    ':contact'                      =>  $_POST["contact"],
+                    ':transaction_id'               =>  $_POST["transaction_id"]
 				)
 			);
 			$result = $statement->fetchAll();
